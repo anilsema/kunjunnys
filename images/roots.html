@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roots — One Hundred Years · Kunjunny's</title>
+<meta name="description" content="From the sacred Pambinkavu of Padinjarangadi to the shores of Aotearoa New Zealand — a family's hundred-year journey through courage, migration, family and legacy.">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="256x256" href="favicon-256.png">
+<link rel="apple-touch-icon" href="favicon-256.png">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* Kerala past — warm */
+  --parchment:#E9DEC6;
+  --parchment-deep:#DDCFB0;
+  --brass:#B0863A;
+  --brass-bright:#CBA24C;
+  --sepia:#372B1B;
+  --sepia-soft:#5F5138;
+  --palm:#4B5D39;
+  /* transitional */
+  --monsoon:#1B2436;
+  /* Aotearoa present — cool */
+  --ink:#0B0E16;
+  --ink-mid:#111726;
+  --blue:#2D5BFF;
+  --blue-soft:#6E90FF;
+  --teal:#3FB9A8;
+  --cream:#F3F1EA;
+  --mist:#AEB6CC;
+
+  --serif:"Cormorant Garamond",serif;
+  --sans:"DM Sans",sans-serif;
+  --mono:"JetBrains Mono",monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{
+  font-family:var(--sans);
+  color:var(--sepia);
+  line-height:1.75;
+  overflow-x:hidden;
+  /* the century-long temperature shift: warm top -> cool bottom */
+  background:
+    linear-gradient(180deg,
+      #EFE6D2 0%,
+      #E9DEC6 12%,
+      #DED0B2 30%,
+      #A99B7E 46%,
+      #4C4E52 58%,
+      #1B2436 70%,
+      #0E1320 84%,
+      #0B0E16 100%);
+}
+h1,h2,h3,h4{font-family:var(--serif);line-height:1.08;font-weight:600;letter-spacing:-.01em}
+
+/* ---------- shared layout ---------- */
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+.eyebrow{
+  font-family:var(--mono);font-size:.68rem;letter-spacing:.34em;
+  text-transform:uppercase;font-weight:500;
+}
+
+/* ---------- top ribbon nav ---------- */
+.ribbon{
+  position:sticky;top:0;z-index:50;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:16px 24px;
+  background:rgba(233,222,198,.82);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(55,43,27,.16);
+  transition:background .4s ease,border-color .4s ease;
+}
+.ribbon.cool{
+  background:rgba(11,14,22,.78);
+  border-bottom:1px solid rgba(110,144,255,.22);
+}
+.ribbon .brand{font-family:var(--serif);font-size:1.15rem;font-weight:600;color:var(--sepia);transition:color .4s}
+.ribbon.cool .brand{color:var(--cream)}
+.ribbon a.back{
+  font-family:var(--mono);font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;
+  text-decoration:none;color:var(--sepia-soft);padding:8px 14px;border:1px solid rgba(55,43,27,.3);
+  border-radius:2px;transition:all .3s;
+}
+.ribbon a.back:hover{background:var(--brass);color:#fff;border-color:var(--brass)}
+.ribbon.cool a.back{color:var(--mist);border-color:rgba(110,144,255,.3)}
+.ribbon.cool a.back:hover{background:var(--blue);color:#fff;border-color:var(--blue)}
+
+/* ---------- HERO ---------- */
+.hero{
+  min-height:96vh;display:flex;flex-direction:column;justify-content:center;
+  position:relative;padding:80px 24px 60px;overflow:hidden;
+}
+.hero-grove{
+  position:absolute;inset:0;z-index:0;opacity:.5;
+  background:
+    radial-gradient(120% 80% at 80% 10%, rgba(176,134,58,.22), transparent 55%),
+    radial-gradient(80% 60% at 10% 90%, rgba(75,93,57,.28), transparent 60%);
+}
+.hero-inner{position:relative;z-index:2;max-width:940px;margin:0 auto;text-align:center}
+.hero .eyebrow{color:var(--brass);margin-bottom:26px}
+.hero h1{
+  font-size:clamp(3.2rem,11vw,7.2rem);color:var(--sepia);font-weight:700;
+  letter-spacing:-.02em;line-height:.94;
+}
+.hero h1 em{font-style:italic;color:var(--brass);display:block;font-weight:500}
+.hero .lede{
+  font-family:var(--serif);font-size:clamp(1.15rem,2.5vw,1.6rem);
+  font-style:italic;color:var(--sepia-soft);max-width:660px;margin:28px auto 0;line-height:1.5;
+}
+.century-rule{
+  display:flex;align-items:center;justify-content:center;gap:18px;
+  margin:44px auto 0;max-width:520px;font-family:var(--mono);
+  font-size:.8rem;letter-spacing:.2em;color:var(--sepia-soft);
+}
+.century-rule .line{flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--brass),transparent)}
+.hero-band{
+  margin:46px auto 0;max-width:1120px;width:100%;
+  border-radius:20px;
+  box-shadow:0 30px 70px -30px rgba(27,36,54,.55), 0 2px 0 rgba(255,255,255,.35) inset;
+}
+.hero-band svg{display:block;width:100%;height:auto}
+#routePath{
+  stroke-dasharray:1;stroke-dashoffset:1;
+  animation:drawRoute 3.4s cubic-bezier(.65,0,.35,1) .4s forwards;
+}
+@keyframes drawRoute{to{stroke-dashoffset:0}}
+.scroll-cue{
+  margin-top:44px;font-family:var(--mono);font-size:.62rem;letter-spacing:.3em;
+  text-transform:uppercase;color:var(--sepia-soft);opacity:.8;
+  animation:bob 2.4s ease-in-out infinite;
+}
+@keyframes bob{0%,100%{transform:translateY(0);opacity:.5}50%{transform:translateY(6px);opacity:1}}
+
+/* ---------- narrative acts ---------- */
+.act-intro{padding:70px 24px 30px}
+.act-intro .wrap{max-width:760px}
+.act-tag{
+  font-family:var(--mono);font-size:.66rem;letter-spacing:.3em;text-transform:uppercase;
+  color:var(--brass);margin-bottom:14px;display:block;
+}
+.act-intro h2{font-size:clamp(2rem,5vw,3.1rem);color:var(--sepia);margin-bottom:18px}
+.act-intro p{font-size:1.08rem;color:var(--sepia-soft);margin-bottom:16px}
+.act-intro p .drop{
+  font-family:var(--serif);font-size:3.4em;line-height:.7;float:left;
+  padding:6px 10px 0 0;color:var(--brass);font-weight:600;
+}
+.grove-line{
+  font-family:var(--serif);font-style:italic;font-size:1.35rem;color:var(--palm);
+  text-align:center;margin:34px auto;max-width:600px;line-height:1.5;
+}
+
+/* ---------- TIMELINE (the signature) ---------- */
+.timeline{position:relative;padding:40px 24px 30px}
+.timeline .wrap{max-width:960px;position:relative}
+.spine{
+  position:absolute;left:50%;top:0;transform:translateX(-50%);
+  width:3px;height:100%;border-radius:3px;
+  background:linear-gradient(180deg,
+    var(--brass) 0%, var(--brass) 22%,
+    #8a6a3a 40%, #4f5560 56%,
+    var(--blue) 74%, var(--blue-soft) 100%);
+  overflow:hidden;
+}
+.spine::after{
+  content:"";position:absolute;left:0;top:0;width:100%;
+  height:var(--grow,0%);
+  background:linear-gradient(180deg,rgba(255,255,255,.55),transparent);
+  filter:blur(1px);transition:height .1s linear;
+}
+.milestone{
+  position:relative;width:calc(50% - 46px);margin-bottom:64px;
+  opacity:0;transform:translateY(40px);transition:opacity .8s ease,transform .8s ease;
+}
+.milestone.show{opacity:1;transform:none}
+.milestone.left{margin-right:auto;text-align:right;padding-right:20px}
+.milestone.right{margin-left:auto;text-align:left;padding-left:20px}
+.node{
+  position:absolute;top:8px;width:20px;height:20px;border-radius:50%;
+  background:var(--brass);border:4px solid var(--parchment);
+  box-shadow:0 0 0 2px var(--brass);z-index:3;
+}
+.milestone.left .node{right:-56px}
+.milestone.right .node{left:-56px}
+.milestone.cool .node{background:var(--blue);box-shadow:0 0 0 2px var(--blue),0 0 18px rgba(45,91,255,.7);border-color:var(--ink)}
+
+.year{
+  font-family:var(--serif);font-size:clamp(2.2rem,5vw,3.2rem);font-weight:600;
+  color:var(--brass);line-height:1;display:block;margin-bottom:2px;
+}
+.milestone.cool .year{color:var(--blue-soft)}
+.place{
+  font-family:var(--mono);font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--sepia-soft);margin-bottom:10px;
+}
+.milestone.cool .place{color:var(--mist)}
+.milestone h3{font-size:1.5rem;color:var(--sepia);margin-bottom:8px}
+.milestone.cool h3{color:var(--cream)}
+.milestone p{font-size:.98rem;color:var(--sepia-soft);margin-bottom:14px}
+.milestone.cool p{color:var(--mist)}
+.coord{
+  font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;color:var(--brass);
+  padding:4px 0;display:inline-block;
+}
+.milestone.cool .coord{color:var(--teal)}
+
+/* transport chip — the "instrument dial" */
+.chip{
+  display:inline-flex;flex-direction:column;gap:6px;text-align:left;
+  border:1px solid rgba(176,134,58,.45);border-radius:6px;
+  padding:12px 16px;margin-top:6px;background:rgba(176,134,58,.08);
+  min-width:190px;
+}
+.milestone.left .chip{margin-left:auto}
+.milestone.cool .chip{border-color:rgba(110,144,255,.4);background:rgba(45,91,255,.1)}
+.chip .mode{display:flex;align-items:center;gap:9px;font-weight:600;font-size:.9rem;color:var(--sepia)}
+.milestone.cool .chip .mode{color:var(--cream)}
+.chip .mode svg{width:26px;height:26px;flex:none}
+.chip .metric{font-family:var(--mono);font-size:.72rem;color:var(--sepia-soft);letter-spacing:.04em}
+.milestone.cool .chip .metric{color:var(--mist)}
+.chip .metric b{color:var(--brass);font-weight:500}
+.milestone.cool .chip .metric b{color:var(--blue-soft)}
+
+/* family tag inside milestone */
+.kin{
+  margin-top:14px;font-family:var(--sans);font-size:.82rem;
+  color:var(--sepia);border-top:1px dashed rgba(95,81,56,.4);padding-top:10px;
+}
+.milestone.cool .kin{color:var(--mist);border-top-color:rgba(110,144,255,.3)}
+.kin strong{color:var(--brass);font-weight:600}
+.milestone.cool .kin strong{color:var(--blue-soft)}
+
+/* ---------- summary stats ---------- */
+.summary{padding:40px 24px 60px}
+.summary .wrap{max-width:1000px}
+.summary-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:20px;
+  border-top:1px solid rgba(110,144,255,.25);
+  border-bottom:1px solid rgba(110,144,255,.25);
+  padding:34px 0;
+}
+.stat{text-align:center}
+.stat .big{font-family:var(--serif);font-size:clamp(1.9rem,4vw,2.8rem);color:var(--blue-soft);font-weight:600;line-height:1}
+.stat .lbl{font-family:var(--mono);font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mist);margin-top:8px}
+.modes-row{display:flex;justify-content:center;gap:14px;margin-top:6px}
+.modes-row svg{width:26px;height:26px;opacity:.85}
+
+/* ---------- closing ---------- */
+.closing{padding:20px 24px 110px;text-align:center}
+.closing .wrap{max-width:720px}
+.tree-metaphor{font-family:var(--serif);font-size:clamp(1.4rem,3.4vw,2rem);color:var(--cream);font-style:italic;line-height:1.5;margin-bottom:30px}
+.future-line{
+  display:flex;align-items:center;gap:14px;justify-content:center;
+  font-family:var(--mono);font-size:.72rem;letter-spacing:.24em;color:var(--blue-soft);
+  text-transform:uppercase;margin:34px 0;
+}
+.future-line .seg{width:64px;height:2px;background:linear-gradient(90deg,var(--blue),transparent);border-radius:2px}
+.quote{
+  font-family:var(--serif);font-size:1.25rem;font-style:italic;color:var(--mist);
+  line-height:1.6;max-width:560px;margin:0 auto;
+}
+.quote .sig{
+  display:block;margin-top:22px;font-family:var(--mono);font-style:normal;
+  font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;color:var(--blue-soft);
+}
+.poster-link{
+  display:inline-flex;align-items:center;gap:9px;margin-top:44px;
+  font-family:var(--mono);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--mist);text-decoration:none;border:1px solid rgba(110,144,255,.35);
+  padding:12px 20px;border-radius:3px;transition:all .3s;
+}
+.poster-link:hover{background:var(--blue);color:#fff;border-color:var(--blue)}
+.brand-seal{margin:64px auto 0;max-width:300px}
+.brand-seal img{width:100%;height:auto;display:block;opacity:.96}
+
+/* ---------- responsive: single-column timeline ---------- */
+@media(max-width:760px){
+  .spine{left:22px}
+  .milestone{width:100%;margin-left:0!important;padding-left:52px!important;padding-right:0!important;text-align:left!important}
+  .milestone.left,.milestone.right{text-align:left}
+  .milestone .node{left:12px!important;right:auto!important}
+  .milestone.left .chip{margin-left:0}
+  .summary-grid{grid-template-columns:repeat(2,1fr);gap:28px 20px}
+  .century-rule{flex-direction:column;gap:8px}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .milestone{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ribbon -->
+<div class="ribbon" id="ribbon">
+  <span class="brand">Kunjunny's</span>
+  <a class="back" href="index.html">← Back home</a>
+</div>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-grove"></div>
+  <div class="hero-inner">
+    <span class="eyebrow">Kunjunny's · Roots</span>
+    <h1>One Hundred<em>Years</em></h1>
+    <p class="lede">From the sacred Pambinkavu of Padinjarangadi to the shores of Aotearoa — a family's journey through courage, migration, and renewal.</p>
+
+    <!-- HERO JOURNEY BAND (vector — the thesis of the page) -->
+    <div class="hero-band">
+      <svg viewBox="0 0 1600 460" role="img" aria-label="A hundred-year route from Padinjarangadi in Kerala to Auckland, New Zealand, by bullock cart, steam train and aircraft.">
+        <defs>
+          <linearGradient id="routeGrad" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="1600" y2="0">
+            <stop offset="0%" stop-color="#B0863A"/><stop offset="42%" stop-color="#9c6f3a"/>
+            <stop offset="60%" stop-color="#5b6270"/><stop offset="78%" stop-color="#2D5BFF"/>
+            <stop offset="100%" stop-color="#6E90FF"/>
+          </linearGradient>
+          <linearGradient id="bandBg" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="1600" y2="0">
+            <stop offset="0%" stop-color="#EFE6D2"/><stop offset="22%" stop-color="#DED0B2"/>
+            <stop offset="47%" stop-color="#8f8a7c"/><stop offset="66%" stop-color="#23304a"/>
+            <stop offset="100%" stop-color="#0E1320"/>
+          </linearGradient>
+        </defs>
+
+        <rect x="0" y="0" width="1600" height="460" rx="20" fill="url(#bandBg)"/>
+
+        <!-- future dashes -->
+        <path d="M1480,250 C1520,244 1548,246 1578,242" fill="none" stroke="#6E90FF" stroke-width="3" stroke-dasharray="2 9" stroke-linecap="round" opacity=".7"/>
+        <text x="1592" y="238" font-family="'Cormorant Garamond',serif" font-size="30" fill="#6E90FF" opacity=".8">?</text>
+
+        <!-- the route -->
+        <path id="routePath" pathLength="1"
+          d="M130,250 C250,215 305,285 400,268 C500,255 560,242 680,250 C820,258 858,180 940,140 C1028,102 1120,255 1200,280 C1300,296 1400,272 1480,250"
+          fill="none" stroke="url(#routeGrad)" stroke-width="4.5" stroke-linecap="round"/>
+
+        <!-- transport: bullock cart -->
+        <g transform="translate(250,232) scale(.9) translate(-24,-24)" fill="none" stroke="#7c5b28" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 30h20l4-8H10z"/><circle cx="12" cy="36" r="4"/><circle cx="24" cy="36" r="4"/><path d="M30 26l8-2M38 24l4 6M38 24l3-4"/><path d="M38 30c2 0 3 1 3 3"/>
+        </g>
+        <text x="250" y="300" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="13" letter-spacing="1.5" fill="#5F5138">BULLOCK CART</text>
+        <text x="250" y="318" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="13" fill="#8a6a3a">18 km · 5–6 h</text>
+
+        <!-- transport: steam train -->
+        <g transform="translate(545,228) scale(.95) translate(-24,-24)" fill="none" stroke="#6a6250" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="14" y="16" width="20" height="18" rx="2"/><path d="M14 24h20"/><rect x="8" y="22" width="6" height="12" rx="1"/><circle cx="14" cy="38" r="3"/><circle cx="24" cy="38" r="3"/><circle cx="31" cy="38" r="3"/><path d="M22 12c0-2 4-2 4 0M28 10v4"/>
+        </g>
+        <text x="545" y="300" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="13" letter-spacing="1.5" fill="#6b6152">STEAM TRAIN</text>
+        <text x="545" y="318" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="13" fill="#8a7a52">206 km · 12–15 h</text>
+
+        <!-- transport: aircraft (the great crossing) -->
+        <g transform="translate(905,120) rotate(-6) scale(1.55) translate(-24,-24)" fill="none" stroke="#8fa8ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 26l36-10-6 20-8-4-4 8-3-8z"/><path d="M28 22l8-6"/>
+        </g>
+        <text x="905" y="188" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="13" letter-spacing="1.5" fill="#AEB6CC">AIR TRAVEL</text>
+        <text x="905" y="206" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="13" fill="#8fa8ff">12,032 km · 18–20 h</text>
+
+        <!-- milestone: Padinjarangadi -->
+        <circle cx="130" cy="250" r="9" fill="#B0863A" stroke="#EFE6D2" stroke-width="3"/>
+        <text x="130" y="205" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-size="34" font-weight="600" fill="#B0863A">1930s</text>
+        <text x="130" y="286" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="12" letter-spacing="1.2" fill="#5F5138">PADINJARANGADI</text>
+
+        <!-- milestone: Kunnamkulam -->
+        <circle cx="400" cy="268" r="9" fill="#B0863A" stroke="#EAE0C8" stroke-width="3"/>
+        <text x="400" y="220" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-size="34" font-weight="600" fill="#B0863A">1930s</text>
+        <text x="400" y="308" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="12" letter-spacing="1.2" fill="#5F5138">KUNNAMKULAM</text>
+
+        <!-- milestone: Thiruvananthapuram -->
+        <circle cx="680" cy="250" r="9" fill="#a07a3c" stroke="#cfc3a6" stroke-width="3"/>
+        <text x="680" y="205" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-size="34" font-weight="600" fill="#a07a3c">1964</text>
+        <text x="680" y="286" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="12" letter-spacing="1.1" fill="#4c4636">THIRUVANANTHAPURAM</text>
+
+        <!-- milestone: Auckland -->
+        <circle cx="1200" cy="280" r="9" fill="#2D5BFF" stroke="#0E1320" stroke-width="3"/>
+        <text x="1200" y="236" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-size="34" font-weight="600" fill="#6E90FF">2003–04</text>
+        <text x="1200" y="322" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="12" letter-spacing="1.2" fill="#AEB6CC">AUCKLAND · NZ</text>
+
+        <!-- milestone: Beyond -->
+        <circle cx="1480" cy="250" r="9" fill="#2D5BFF" stroke="#0E1320" stroke-width="3"/>
+        <text x="1480" y="206" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-size="30" font-weight="500" fill="#6E90FF">2030</text>
+        <text x="1480" y="286" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="12" letter-spacing="1.2" fill="#AEB6CC">&amp; BEYOND</text>
+      </svg>
+    </div>
+
+    <div class="scroll-cue">Begin the journey ↓</div>
+  </div>
+</header>
+
+<!-- ACT I -->
+<section class="act-intro">
+  <div class="wrap">
+    <span class="act-tag">Act I — Roots · 1925–1939</span>
+    <h2>We did not begin in a city. We began in nature.</h2>
+    <p><span class="drop">B</span>efore the journeys began, generations lived close to the earth in Padinjarangadi — a scatter of coconut groves, paddy fields and Nalukettu courtyards deep in rural Kerala. Life moved to the rhythm of the monsoon and the temple lamp, and the family kept watch over the sacred <em>Pambinkavu</em>, the serpent grove where the forest was left wild and untouched.</p>
+    <p>The great-grandfather was not remembered as a hero, but as something quieter and larger: a <strong>keeper of the land</strong>. Into this world of brass bells and butterflies, of wind moving through the palms, my grandfather <strong>Thami</strong> was born.</p>
+    <p class="grove-line">"Custodians of a grove that still breathes — this is where the century starts."</p>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="timeline">
+  <div class="wrap">
+    <div class="spine" id="spine"></div>
+
+    <!-- 1930s Padinjarangadi -->
+    <article class="milestone left" data-stop>
+      <span class="node"></span>
+      <span class="year">1930s</span>
+      <div class="place">Padinjarangadi · Kerala</div>
+      <h3>The keeper's home</h3>
+      <p>Where the great-grandfather lived as custodian of the sacred grove, and where grandfather Thami was born into a life rooted in the land.</p>
+      <span class="coord">10.7492° N · 76.0210° E</span>
+      <div class="kin"><strong>Great-grandfather</strong> — keeper of the land, guardian of the Pambinkavu.</div>
+    </article>
+
+    <!-- 1930s Kunnamkulam -->
+    <article class="milestone right" data-stop>
+      <span class="node"></span>
+      <span class="year">1930s</span>
+      <div class="place">Kunnamkulam · Thrissur</div>
+      <h3>The first journey</h3>
+      <p>Thami set out by bullock cart for the trading town of Kunnamkulam — printing presses, markets and a wider world — and built a life there.</p>
+      <span class="coord">10.5956° N · 76.0892° E</span>
+      <div class="chip">
+        <span class="mode">
+          <!-- bullock cart -->
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 30h20l4-8H10z"/><circle cx="12" cy="36" r="4"/><circle cx="24" cy="36" r="4"/><path d="M30 26l8-2M38 24l4 6M38 24l3-4"/><path d="M38 30c2 0 3 1 3 3"/></svg>
+          Bullock cart
+        </span>
+        <span class="metric">Distance <b>≈ 18 km</b></span>
+        <span class="metric">Time taken <b>5–6 hours</b></span>
+      </div>
+      <div class="kin">Grandfather <strong>Thami</strong> married <strong>Chakki</strong> — a new branch takes hold.</div>
+    </article>
+
+    <!-- 1964 Thiruvananthapuram -->
+    <article class="milestone left" data-stop>
+      <span class="node"></span>
+      <span class="year">1964</span>
+      <div class="place">Thiruvananthapuram · Kerala</div>
+      <h3>Steam into modern India</h3>
+      <p>A whistle, a plume of smoke — and my father Kunjunny rode the steam railway south to Kerala's capital to make his own beginning.</p>
+      <span class="coord">8.5241° N · 76.9366° E</span>
+      <div class="chip">
+        <span class="mode">
+          <!-- steam train -->
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="16" width="20" height="18" rx="2"/><path d="M14 24h20"/><rect x="8" y="22" width="6" height="12" rx="1"/><circle cx="14" cy="38" r="3"/><circle cx="24" cy="38" r="3"/><circle cx="31" cy="38" r="3"/><path d="M22 12c0-2 4-2 4 0M28 10v4"/></svg>
+          Steam engine train
+        </span>
+        <span class="metric">Distance <b>≈ 206 km</b></span>
+        <span class="metric">Time taken <b>12–15 hours</b></span>
+      </div>
+      <div class="kin">Father <strong>Kunjunny</strong> married <strong>Devayani</strong>. Children: <strong>Anil</strong> &amp; <strong>Arun</strong>.</div>
+    </article>
+
+    <!-- 2003 Across the ocean -->
+    <article class="milestone right cool" data-stop>
+      <span class="node"></span>
+      <span class="year">2003</span>
+      <div class="place">India → Aotearoa</div>
+      <h3>Across the ocean</h3>
+      <p>The map pulls back to a whole hemisphere. An aircraft lifts off and traces a contrail over the Indian Ocean toward a new life — Anil crossing to join Smitha, already in New Zealand since 2001.</p>
+      <div class="chip">
+        <span class="mode">
+          <!-- aircraft -->
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 26l36-10-6 20-8-4-4 8-3-8z"/><path d="M28 22l8-6"/></svg>
+          Air travel
+        </span>
+        <span class="metric">Distance <b>≈ 12,032 km</b></span>
+        <span class="metric">Time taken <b>18–20 hours</b></span>
+      </div>
+      <div class="kin"><strong>Anil</strong> married <strong>Smitha Ambadi</strong> — the family sets down roots in New Zealand.</div>
+    </article>
+
+    <!-- 2004 Auckland -->
+    <article class="milestone left cool" data-stop>
+      <span class="node"></span>
+      <span class="year">2004</span>
+      <div class="place">Auckland · New Zealand</div>
+      <h3>New roots</h3>
+      <p>Glass, water and the Sky Tower against a southern sky. The tree doesn't stop growing — it puts out a new leaf. Dev Anil is born, the first of the family beneath the silver fern.</p>
+      <span class="coord">36.8485° S · 174.7633° E</span>
+      <div class="kin">Next generation: <strong>Dev Anil</strong>, born in Auckland — a Kerala grove reaching Aotearoa soil.</div>
+    </article>
+
+    <!-- 2026 & beyond -->
+    <article class="milestone right cool" data-stop>
+      <span class="node"></span>
+      <span class="year">Beyond</span>
+      <div class="place">2026 → 2030 &amp; onward</div>
+      <h3>The line keeps glowing</h3>
+      <p>The timeline doesn't end at the present — it fades forward with a question mark. Every generation inherits a story; every generation chooses how to carry it on.</p>
+      <div class="kin"><strong>The future is now.</strong> Honouring the roots, building the present, inspiring what comes next.</div>
+    </article>
+
+  </div>
+</section>
+
+<!-- SUMMARY -->
+<section class="summary">
+  <div class="wrap">
+    <div class="summary-grid">
+      <div class="stat">
+        <div class="big">≈ 12,256 km</div>
+        <div class="lbl">Total distance travelled</div>
+      </div>
+      <div class="stat">
+        <div class="big">≈ 35–41 hrs</div>
+        <div class="lbl">Total travel time</div>
+      </div>
+      <div class="stat">
+        <div class="big">3 Modes</div>
+        <div class="modes-row">
+          <svg viewBox="0 0 48 48" fill="none" stroke="var(--brass-bright)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 30h20l4-8H10z"/><circle cx="12" cy="36" r="4"/><circle cx="24" cy="36" r="4"/><path d="M30 26l8-2"/></svg>
+          <svg viewBox="0 0 48 48" fill="none" stroke="var(--mist)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="16" width="20" height="18" rx="2"/><path d="M14 24h20"/><circle cx="14" cy="38" r="3"/><circle cx="24" cy="38" r="3"/><circle cx="31" cy="38" r="3"/></svg>
+          <svg viewBox="0 0 48 48" fill="none" stroke="var(--blue-soft)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 26l36-10-6 20-8-4-4 8-3-8z"/></svg>
+        </div>
+        <div class="lbl">Cart · Train · Aircraft</div>
+      </div>
+      <div class="stat">
+        <div class="big">4 Gen · 1 Journey</div>
+        <div class="lbl">Rooted in legacy</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSING -->
+<section class="closing">
+  <div class="wrap">
+    <p class="tree-metaphor">The route draws the shape of a tree — its roots holding fast in Kerala while its canopy reaches, leaf by leaf, into New Zealand.</p>
+    <div class="future-line"><span class="seg"></span>The journey continues<span class="seg" style="background:linear-gradient(270deg,var(--blue),transparent)"></span></div>
+    <p class="quote">"From the sacred Pambinkavu of Padinjarangadi to Aotearoa New Zealand — one hundred years of courage, migration, family and legacy."
+      <span class="sig">Every generation chooses how to continue the story</span>
+    </p>
+    <a class="poster-link" href="roots-journey-poster.png" download>⤓ Download the journey poster</a>
+    <div class="brand-seal">
+      <img src="kunjunnys-logo-transparent.png" alt="Kunjunnys — Kerala Roots · Aotearoa Horizons">
+    </div>
+  </div>
+</section>
+
+<script>
+// grow the spine + reveal milestones on scroll
+const spine = document.getElementById('spine');
+const ribbon = document.getElementById('ribbon');
+const stops = document.querySelectorAll('[data-stop]');
+
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('show'); });
+},{threshold:.25, rootMargin:'0px 0px -60px 0px'});
+stops.forEach(s=>io.observe(s));
+
+function onScroll(){
+  // spine growth relative to timeline section
+  const tl = document.querySelector('.timeline');
+  const r = tl.getBoundingClientRect();
+  const vh = window.innerHeight;
+  const total = r.height - vh*0.5;
+  const passed = Math.min(Math.max(vh*0.5 - r.top, 0), total);
+  const pct = total>0 ? (passed/total)*100 : 0;
+  spine.style.setProperty('--grow', pct+'%');
+
+  // ribbon warms -> cools past the midpoint of the page
+  const mid = document.body.scrollHeight * 0.5;
+  if(window.scrollY > mid - vh*0.3) ribbon.classList.add('cool');
+  else ribbon.classList.remove('cool');
+}
+window.addEventListener('scroll',onScroll,{passive:true});
+onScroll();
+</script>
+</body>
+</html>
